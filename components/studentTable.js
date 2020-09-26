@@ -2,7 +2,7 @@ import { Table, Tag, Button } from "antd";
 import StudentStore from "../store/studentStore";
 
 const StudentTable = () => {
-  const { data, setData } = StudentStore();
+  const { data, setData, search,isSearching } = StudentStore();
 
   const columns = [
     {
@@ -40,12 +40,12 @@ const StudentTable = () => {
             setData(data.filter((el) => el.key !== value));
           }}
         >
-          Remove
+          Delete
         </Button>
       ),
     },
   ];
-  return <Table dataSource={data} columns={columns} />;
+  return <Table dataSource={isSearching ? search : data } columns={columns} />;
 };
 
 export default StudentTable;

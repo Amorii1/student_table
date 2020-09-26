@@ -7,12 +7,16 @@ const StudentStore = create((set) => ({
   gender: null,
   data: [],
   isModal: false,
-  setIsModal: (value) => set({ isModal: value }),
-  setData: (value) => set({ data: value }),
-  setName: (value) => set({ name: value }),
+  isSearching: false,
+  search: null,
+  setIsModal: (isModal) => set({ isModal }),
+  setData: (data) => set({ data}),
+  setName: (name) => set({ name}),
   setAge: (value) => set({ age: value }),
   setAddress: (value) => set({ address: value }),
   setGender: (value) => set({ gender: value }),
+  setIsSearching: (value) => set({ isSearching: value }),
+  setSearch: (value) => set({ search: value }),
 }));
 
 export default StudentStore;
